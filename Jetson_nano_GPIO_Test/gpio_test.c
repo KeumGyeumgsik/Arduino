@@ -18,7 +18,12 @@ int main(){
  sprintf보다 snprintf를 더 많이 사용한다.
  */
  fp = fopen(buff,"w");
- fprintf(fp,"%d\n",port_num); //fprintf => 스트림에 형식화된 데이터 쓰기 
+ fprintf(fp,"%d\n",port_num); //fprintf => 스트림에 형식화된 데이터 쓰기 / 파일에 문자열 쓰기.
+ /*
+ fprintf(파일포인터, 서식, 값1, 값2, ...);
+ int fprintf(FILE * const _Stream, char const * const _Format, ...);
+ 성공하면 쓴 문자열의 길이를 반환, 실패하면 음수를 반환
+ */
  fclose(fp);
 
  snprintf(buff,sizeof(buff),"%s/gpio%d/direction",LED_GPIO_DIR,port_num);
